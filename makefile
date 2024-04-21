@@ -23,7 +23,10 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.$(SRC_EXT) $(HED)
 $(OUT) : $(OBJ) 
 	$(CXX) $(OBJ) -o $@ $(LIB)
 
+initialize:
+	mkdir $(OBJ_DIR)
+
 clean:
-	rm $(wildcard $(OBJ_DIR)/*)
+	rm $(OBJ_DIR) -r
 	rm $(OUT)
 
